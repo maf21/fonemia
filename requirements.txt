@@ -1,0 +1,9 @@
+#tensorflow==2.14.0
+
+tensorflow
+pyinstaller
+librosa
+keras
+Flask
+gunicorn
+#uWSGI
