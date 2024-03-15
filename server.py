@@ -70,17 +70,22 @@ def validate_phoneme_pattern(pattern: str):
 
     return jsonify(result)
 
+@app.route('/')
+def home():
+    return "Running"
+
 
 if __name__ == "__main__":
     # pyinstaller --onefile --console --clean server.py --name "backend"
     spectrograms = convert_audio_to_spectrograms("./models/recording.wav")
     model.predict(spectrograms)
+    
 
     # version app
     #app.run(port=4000, debug=False)
 
     # version runanyway
-    #app.run(port=4000, debug=False, host="0.0.0.0")
+    #app.run(port=5000, debug=False, host="0.0.0.0")
 
     # deploy production
     app.run(debug=False)
